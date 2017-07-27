@@ -1,2 +1,95 @@
 iwconfig ath0 ESSID mynewssid
 cfgmtd -w -p /etc/
+
+
+
+TUTORIAL DETECCION Y ELIMINACION VIRUS MF
+
+si el equipo responde a pings pero no se puede acceder via web esta infectado,para solucionarlo seguir los siguientes pasos:
+
+abrir PuTTY.exe, en el primer campo poner la ip del equipo y clickear en OPEN(parte inferior del programa)
+
+esperar unos instantes y clickear YES/SI en la ventana de advertencia que sale 
+
+loguearse con ubnt/oktubre o mother/fucker
+
+
+
+(copiar esto en la ventana del programa) 
+
+---------------------------------------------------------------
+
+cd /etc/persistent/
+rm mf.tar
+rm rc.poststart
+rm -R .mf
+cfgmtd -p /etc/persistent/ -w
+reboot
+
+----------------------------------------------------------------
+al ultimo comando darle enter
+touch /etc/persistent/ct
+save
+
+
+esperar que reinicie (verlo por ping) y cargarle el firm xm 5.6.5 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+touch /etc/persistent/ct
+sed -i 's/radio.1.countrycode=.*/radio.1.countrycode=511/' /tmp/system.cfg
+sed -i 's/radio.countrycode=.*/radio.countrycode=511/' /tmp/system.cfg
+cd /etc/persistent/
+rm mf.tar
+rm rc.poststart
+rm -R .mf
+save
+
+
+touch /etc/persistent/ct
+sed -i 's/radio.1.countrycode=.*/radio.1.countrycode=511/' /tmp/system.cfg
+sed -i 's/radio.countrycode=.*/radio.countrycode=511/' /tmp/system.cfg
+save
+reboot
+
+
+
+
+
+ctiva Compliance Test
+cambia la config al pais compliance
+desinfecta
+guarda la config 
+descarga el firm 5.6.6 y lo actualiza
+
+
+al mismo tiempo controlarlo con PING 
+cuando vuelve a linkear esta actualizado y en compliance(sigue mostrando australia, dezconosco la razon)
+ 
+###############################################################################################################
+
+touch /etc/persistent/ct
+sed -i 's/radio.1.countrycode=.*/radio.1.countrycode=511/' /tmp/system.cfg
+sed -i 's/radio.countrycode=.*/radio.countrycode=511/' /tmp/system.cfg
+cd /etc/persistent/
+rm mf.tar
+rm rc.poststart
+rm -R .mf
+save
+wget -O/tmp/fwupdate.bin https://dl.ubnt.com/XN-fw-internal/v5.6.9/XM.v5.6.9-licensed.29546.160819.1249.bin && /usr/bin/ubntbox fwupdate.real -m /tmp/fwupdate.bin 2>&1
+
+ls COMANDOFALSOPARANODARLEENTER
+
+###################################################################################################################
