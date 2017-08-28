@@ -1,23 +1,14 @@
+
+
+Cambiar SSID de un nano en produccion: 
+ 
 iwconfig ath0 ESSID mynewssid
 cfgmtd -w -p /etc/
 
 
-
+----------------------------------------------------------------
 TUTORIAL DETECCION Y ELIMINACION VIRUS MF
-
-si el equipo responde a pings pero no se puede acceder via web esta infectado,para solucionarlo seguir los siguientes pasos:
-
-abrir PuTTY.exe, en el primer campo poner la ip del equipo y clickear en OPEN(parte inferior del programa)
-
-esperar unos instantes y clickear YES/SI en la ventana de advertencia que sale 
-
-loguearse con ubnt/oktubre o mother/fucker
-
-
-
-(copiar esto en la ventana del programa) 
-
----------------------------------------------------------------
+(comandos para pasarle por ssh) 
 
 cd /etc/persistent/
 rm mf.tar
@@ -27,25 +18,7 @@ cfgmtd -p /etc/persistent/ -w
 reboot
 
 ----------------------------------------------------------------
-al ultimo comando darle enter
-touch /etc/persistent/ct
-save
-
-
-esperar que reinicie (verlo por ping) y cargarle el firm xm 5.6.5 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Habilitar compliance test y limpiar virus MF
 
 
 touch /etc/persistent/ct
@@ -57,6 +30,8 @@ rm rc.poststart
 rm -R .mf
 save
 
+------------------------------------------------------------------
+Habilitar y pasar a compliance test automaticamente
 
 touch /etc/persistent/ct
 sed -i 's/radio.1.countrycode=.*/radio.1.countrycode=511/' /tmp/system.cfg
@@ -64,11 +39,10 @@ sed -i 's/radio.countrycode=.*/radio.countrycode=511/' /tmp/system.cfg
 save
 reboot
 
+--------------------------------------------------------------------
 
-
-
-
-ctiva Compliance Test
+ SOLO PARA EQUIPOS XM 
+Activa Compliance Test
 cambia la config al pais compliance
 desinfecta
 guarda la config 
@@ -76,10 +50,8 @@ descarga el firm 5.6.6 y lo actualiza
 
 
 al mismo tiempo controlarlo con PING 
-cuando vuelve a linkear esta actualizado y en compliance(sigue mostrando australia, dezconosco la razon)
+cuando vuelve a linkear esta actualizado y en compliance test
  
-###############################################################################################################
-
 touch /etc/persistent/ct
 sed -i 's/radio.1.countrycode=.*/radio.1.countrycode=511/' /tmp/system.cfg
 sed -i 's/radio.countrycode=.*/radio.countrycode=511/' /tmp/system.cfg
